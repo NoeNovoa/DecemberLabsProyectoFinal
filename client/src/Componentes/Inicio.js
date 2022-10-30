@@ -32,7 +32,7 @@ const Inicio = () => {
                     </NavLink>
                 </div>
                 <div class="col d-flex justify-content-center">
-                    <NavLink  exact to="/Informes"  id="dash" >
+                    <NavLink exact to="/Informes"  id="dash" >
                         <table className="linkContainer" >                    
                             <img src={Informes} className="iconosImg" alt="User" />
                         </table>

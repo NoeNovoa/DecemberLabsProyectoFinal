@@ -1,5 +1,8 @@
 import './Css/App.css';
 import Inicio from './Componentes/Inicio';
+import Comidas from './Componentes/Comidas';
+import Timeline from './Componentes/Timeline';
+import Informes from './Componentes/Informes';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
@@ -50,6 +53,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Inicio}/>
           <Route exact path="/Inicio" component={Inicio}/>
+          <Route exact path="/Comidas" component={Comidas}/>
+          <Route exact path="/Informes" component={Informes}/>
+          <Route exact path="/Timeline" component={Timeline}/>
         </Switch>
       </div>
       </Router>
