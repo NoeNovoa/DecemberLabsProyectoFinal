@@ -1,6 +1,7 @@
 import React from 'react';
 import LogoInicio from '../Images/LogoInicio.jpg';
 import UserImg from '../Images/iconoPerfil.png';
+import Timeline from '../Images/TimelineImg.png';
 import { NavLink } from 'react-router-dom';
 const Inicio = () => {
     return (
@@ -16,9 +17,11 @@ const Inicio = () => {
             <div class="row">
            
                 <div class="col">
-                    <table className="linkContainer" >                    
-                        <NavLink className="linkMenu" exact to="/Comidas"  id="dash" >TimeLine</NavLink>
-                    </table>
+                    <NavLink className="linkMenu" exact to="/Comidas"  id="dash" >
+                        <table className="linkContainer" >                    
+                            <img src={Timeline} className="iconosImg" alt="User" />
+                        </table>
+                    </NavLink>
                 </div>
                 <div class="col">
                     <table className="linkContainer" >                    
