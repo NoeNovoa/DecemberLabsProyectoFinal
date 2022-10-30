@@ -17,7 +17,7 @@ const Inicio = () => {
             <div class="row">
            
                 <div class="col">
-                    <NavLink className="linkMenu" exact to="/Comidas"  id="dash" >
+                    <NavLink className="linkMenu" exact to="./Comidas"  id="dash" >
                         <table className="linkContainer" >                    
                             <img src={Timeline} className="iconosImg" alt="User" />
                         </table>
