@@ -1,5 +1,6 @@
 import React from 'react';
 import LogoInicio from '../Images/LogoInicio.jpg';
+import UserImg from '../Images/iconoPerfil.png';
 import { NavLink } from 'react-router-dom';
 const Inicio = () => {
     return (
@@ -8,6 +9,9 @@ const Inicio = () => {
                 <div class="col align-self-start">
                     <img src={LogoInicio} className="imgLogo" alt="LogoDL" />
                 </div>   
+                <div class="col align-self-end">
+                    <img src={UserImg} className="UserImg" alt="User" />
+                </div>
             </div>
             <div class="row">
            
@@ -25,8 +29,7 @@ const Inicio = () => {
                     <table className="linkContainer" >                    
                         <NavLink className="linkMenu" exact to="/Informes"  id="dash" >TimeLine</NavLink>
                     </table>
-                </div>
-            
+                </div>   
             </div>
         </div>
     )
