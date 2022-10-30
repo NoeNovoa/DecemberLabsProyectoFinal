@@ -2,7 +2,7 @@
 let conn = {
     host: "localhost",
     user: "yourusername",
-    password: "yourpassword",
+    password: "",
     database: "mydb"
  };
 
