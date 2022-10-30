@@ -1,5 +1,5 @@
 * {
-  font-family: montserrat;
+  font-family: Tahoma ;
   background-color: #3B95F5; 
 }
 
@@ -38,12 +38,6 @@ background-color: #3B95F5;
 height: 100%; 
 }
 
-.linkMenu{
-font-size: 28px;
-text-decoration: none;
-color: black;
-background-color: white;
-}
 
 .linkContainer{
   background-color: white;
@@ -67,4 +61,14 @@ background-color: white;
   width: 100px;
   height: 100px;
   background-color: transparent;
+  align-items: center;
+  margin-top: 12%;
+}
+.padding20{
+  padding-top: 20%;
+}
+
+.textosMenuInicial{
+  color: white;
+  padding-top: 3%;
 }
