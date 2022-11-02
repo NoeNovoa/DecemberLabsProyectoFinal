@@ -186,3 +186,11 @@ background-color: transparent;
   text-align: center;
 }
 
+
+.itemTimelineComidas img{
+  background-color: transparent;
+  position: relative;
+  right: 500px;
+}
+
+

@@ -6,6 +6,7 @@ import cancelMenuImg from '../Images/cancel.png';
 import Filtro_Comidas_img from '../Images/Filtro_Comidas.png';
 import Agregar_Menu_img from '../Images/Agregar_Menu.png';
 import Volver_img from '../Images/Volver.png';
+import Lapiz_Comidas_Menu_img from '../Images/Lapiz_Comidas_Menu.png'; 
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -103,9 +104,7 @@ const Comidas = () => {
                     {pedidosComidas.map((pedidosComidas) =>
                     (
                     <div>
-                        <table className="linkContainerComidasMenus" > 
-                            <p className="itemTimelineComidas" key={pedidosComidas.id}><img src={Volver_img} className="iconosImgSecondOption" /> {pedidosComidas.nombre} </p>
-                        </table>
+                        <p className="itemTimelineComidas" key={pedidosComidas.id}><img src={Volver_img}/> <img src={Lapiz_Comidas_Menu_img}/> {pedidosComidas.nombre} </p>
                     </div>
                     ))}
             </div>        
