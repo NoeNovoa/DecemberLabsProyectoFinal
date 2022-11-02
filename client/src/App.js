@@ -3,6 +3,7 @@ import Inicio from './Componentes/Inicio';
 import Comidas from './Componentes/Comidas';
 import Timeline from './Componentes/Timeline';
 import Informes from './Componentes/Informes';
+import Menu from './Componentes/Menu';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
@@ -56,6 +57,7 @@ function App() {
           <Route exact path="/Comidas" component={Comidas}/>
           <Route exact path="/Informes" component={Informes}/>
           <Route exact path="/Timeline" component={Timeline}/>
+          <Route exact path="/Menu" component={Menu}/>
         </Switch>
       </div>
       </Router>
