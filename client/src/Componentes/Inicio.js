@@ -16,7 +16,7 @@ const Inicio = () => {
                     <img src={UserImg} className="UserImg" alt="User" />
                 </div>
             </div>
-            <div class="row padding20">
+            <div class="row " style={{"paddingTop":"20%"}}>
                 <div class="col d-flex justify-content-center">
                     <NavLink  exact to="/Comidas"  id="dash" >
                         <table className="linkContainer" >                    

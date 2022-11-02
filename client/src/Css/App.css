@@ -64,11 +64,37 @@ height: 100%;
   align-items: center;
   margin-top: 12%;
 }
-.padding20{
-  padding-top: 20%;
-}
 
 .textosMenuInicial{
   color: white;
   padding-top: 3%;
+}
+
+.tableRedonda{
+  background-color: white;
+  border-radius: 25px;
+  height: 5%;
+  align-items: center;
+}
+
+.flechasTimeline{
+background-color: transparent;
+}
+
+.transparent{
+  background-color: transparent;
+}
+
+.tableGridTimeline{
+  background-color: white;
+  border-radius: 25px;
+  height: 60%;
+}
+
+.itemTimeline{
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  margin: 30px 10px 30px 10px;
+  height: 60px;
 }
