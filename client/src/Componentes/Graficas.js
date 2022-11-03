@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Informes = () => {
     return (
         <div className="container">
-            <h2 class="col d-flex justify-content-center textosMenuInicial">Informes</h2>
+            <h2 class="col d-flex justify-content-center textosMenuInicial">Graficas</h2>
             <div class="row textosMenuInicial">
                 <div class="col d-flex justify-content-center">
                     <h3 class="col d-flex justify-content-center">Almuerzos por mes</h3>

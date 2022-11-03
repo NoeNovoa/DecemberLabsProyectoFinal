@@ -194,6 +194,13 @@ background-color: transparent;
   border-radius: 25px;
 }
 
+.divTexto{
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  border-radius: 25px;
+}
+
 .linkContainerComidasMenus{
   background-color: white;
   border-radius: 100%;
@@ -208,5 +215,4 @@ background-color: transparent;
   position: relative;
   right: 500px;
 }
-
 
