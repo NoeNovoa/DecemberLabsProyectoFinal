@@ -11,17 +11,16 @@ let pedidos = [
 
 const Informes = () => {
     return (
+
         <div className="container">
             <h2 class="col d-flex justify-content-center textosMenuInicial">Informes</h2>
             <div class="row textosMenuInicial">
                 <div class=" card col d-flex justify-content-center">
                     <h3  class=" justify-content-center tituloInforme">Cantidad de platos elaborados por horario por día</h3>
-                    <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                        <input placeholder="Seleccionar fecha" type="text" id="example" class="form-control"></input>
-                        <label for="example">Fecha Elaboración</label>
-                        <i class="fas fa-calendar input-prefix"></i>
-                    </div>
-                    <table class="table table-hover">
+                    <label for="fecha" class="divContenido">Fecha Elaboración</label>
+                    <input placeholder="Seleccionar fecha" type="date" class="form-control" id="fecha"></input><br></br>
+                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"> Filtrar</button><br></br>
+                    <table class="table table-striped table-dark table-hover borderTable">
                         <thead class="thead-ligth">
                             <tr>
                             <th scope="col">Menu</th>

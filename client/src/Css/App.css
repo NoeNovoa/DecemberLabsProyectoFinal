@@ -187,7 +187,12 @@ background-color: transparent;
   font-size: 30px;
 }
 
-
+.divContenido{
+  background-color: white;
+  color: #3B95F5; 
+  font-size: 20px;
+  border-radius: 25px;
+}
 
 .linkContainerComidasMenus{
   background-color: white;
