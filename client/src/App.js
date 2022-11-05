@@ -3,6 +3,7 @@ import Inicio from './Componentes/Inicio';
 import Comidas from './Componentes/Comidas';
 import Timeline from './Componentes/Timeline';
 import Informes from './Componentes/Informes';
+import Graficas from './Componentes/Graficas';
 import Menu from './Componentes/Menu';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
@@ -56,6 +57,7 @@ function App() {
           <Route exact path="/Inicio" component={Inicio}/>
           <Route exact path="/Comidas" component={Comidas}/>
           <Route exact path="/Informes" component={Informes}/>
+          <Route exact path="/Graficas" component={Graficas}/>
           <Route exact path="/Timeline" component={Timeline}/>
           <Route exact path="/Menu" component={Menu}/>
         </Switch>

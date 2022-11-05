@@ -4,6 +4,7 @@ import UserImg from '../Images/iconoPerfil.png';
 import Timeline from '../Images/TimelineImg.png';
 import Comidas from '../Images/ComidasImg.png';
 import Informes from '../Images/InformesImg.png';
+import Graficas from '../Images/GraficasImg.png';
 import { NavLink } from 'react-router-dom';
 const Inicio = () => {
     return (
@@ -38,11 +39,19 @@ const Inicio = () => {
                         </table>
                     </NavLink>    
                 </div>
+                <div class="col d-flex justify-content-center">
+                    <NavLink exact to="/Graficas"  id="dash" >
+                        <table className="linkContainer" >                    
+                            <img src={Graficas} className="iconosImg" alt="User" />
+                        </table>
+                    </NavLink>    
+                </div>
             </div>
             <div class="row textosMenuInicial">
                     <h2 class="col d-flex justify-content-center">Comidas</h2>
                     <h2 class="col d-flex justify-content-center">Iniciar servicio</h2> 
                     <h2 class="col d-flex justify-content-center">Informes</h2>
+                    <h2 class="col d-flex justify-content-center">Graficas</h2>
             </div>
         </div>
     )

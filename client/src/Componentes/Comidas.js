@@ -6,10 +6,29 @@ import cancelMenuImg from '../Images/cancel.png';
 import Filtro_Comidas_img from '../Images/Filtro_Comidas.png';
 import Agregar_Menu_img from '../Images/Agregar_Menu.png';
 import Volver_img from '../Images/Volver.png';
+import Lapiz_Comidas_Menu_img from '../Images/Lapiz_Comidas_Menu.png'; 
 import { NavLink } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import ModalDialog from 'react-bootstrap/ModalDialog'
+import ModalHeader from 'react-bootstrap/ModalHeader'
+import flechaDer from '../Images/flechaDer.png';
+import flechaIzq from '../Images/flechaIzq.png';
+import { useState } from 'react';
+
+
+
 const Comidas = () => {
     
-    
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    let pedidosComidas = [
+        {id : 1,nombre: "Banana"},
+        {id : 2, nombre: "Frutilla"},
+        {id : 3, nombre: "Manzana"}
+    ]
     
     return (
 
@@ -17,69 +36,57 @@ const Comidas = () => {
 
         <div className="container m-2">
         <div class="row " >
-             <div class="col-md-1 ">
+            <div class="col-md-1 ">
                  <table className="linkContainerSecondOption" >  
                      <img src={Filtro_Comidas_img} className="iconosImgSecondOption" />
                  </table>
-             </div>   
-             <div class="col-md-1" >
-                 
+            </div>   
+            <div class="col-md-1" >
 
-             <button
-                 type="button"
-                 class="btn btn-primary"
-                 data-mdb-toggle="modal"
-                 data-mdb-target="#exampleModal"
-                 data-mdb-whatever="@mdo"
-                 >
-                 Open modal for @mdo
-             </button>
+            <table className="linkContainerSecondOption" >
+                <Button variant="default" onClick={handleShow}>
+                    <img src={Agregar_Menu_img} className="iconosImgThirdOption" />
+                </Button>
+            </table>
 
-                 
-
-             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-                     <div class="modal-header">
-                         <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                     </div>
-                     <div class="modal-body">
-                         <form>
-                         <div class="mb-3">
-                             <label for="recipient-name" class="col-form-label">Recipient:</label>
-                             <input type="text" class="form-control" id="recipient-name" />
-                         </div>
-                         <div class="mb-3">
-                             <label for="message-text" class="col-form-label">Message:</label>
-                             <textarea class="form-control" id="message-text"></textarea>
-                         </div>
-                         </form>
-                     </div>
-                     <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                         <button type="button" class="btn btn-primary">Send message</button>
-                     </div>
-                     </div>
-                 </div>
-             </div>
-
-
-
-
-
-
-
+                <Modal show={show} className="my-modal" onHide={handleClose}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Crear Menu</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <Form className="my-modal-form" >
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Descripción</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Nuevo menu"
+                            autoFocus
+                        />
+                        </Form.Group>
+                        <Form.Group
+                        className="mb-3"
+                        controlId="exampleForm.ControlTextarea1"
+                        >
+                        <Form.Check 
+                            type="switch"
+                            id="custom-switch"
+                            label="Vegetariano"
+                        />
+                        </Form.Group>
+                    </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="outline-primary" onClick={handleClose}>
+                        Crear
+                    </Button>
+                    </Modal.Footer>
+                </Modal>
              </div>
              
-             
-             
-
-
              <div class="col-md-5 " >
                  <div class="input-group">
                      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                     <button type="button" class="btn btn-dark">Submit</button>
+                     <button type="button" class="btn btn-dark">Buscar</button>
                  </div>
              </div>
              <div class="col-md-5 d-flex flex-row-reverse">
@@ -91,6 +98,17 @@ const Comidas = () => {
              </div>
          </div>
 
+         <div className="container">  
+           
+            <div className="row " style={{"paddingTop":"20%"}}>
+                    {pedidosComidas.map((pedidosComidas) =>
+                    (
+                    <div>
+                        <p className="itemTimelineComidas" key={pedidosComidas.id}><img src={Volver_img}/> <img src={Lapiz_Comidas_Menu_img}/> {pedidosComidas.nombre} </p>
+                    </div>
+                    ))}
+            </div>        
+        </div>
          
      </div>
 
