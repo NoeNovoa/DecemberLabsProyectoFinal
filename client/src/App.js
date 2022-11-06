@@ -1,4 +1,5 @@
 import './Css/App.css';
+import Login from './Componentes/Login';
 import Inicio from './Componentes/Inicio';
 import Comidas from './Componentes/Comidas';
 import Timeline from './Componentes/Timeline';
@@ -24,7 +25,7 @@ const rootReducer = (state = initialState, action) => {
 
 function App() {
 
-  const [backendData, setBackendData] = useState([{}])
+  /*const [backendData, setBackendData] = useState([{}])
 
   useEffect(() =>{
     fetch("/api").then(
@@ -36,7 +37,7 @@ function App() {
     )
   }, [])
 
-/*return (
+return (
     <div>
     {(typeof backendData.users === 'undefined') ? (
       <p>Loading...</p>
@@ -46,14 +47,17 @@ function App() {
       ))
     )}
     </div>
-  )*/ 
+  )*/
+  
+
   const store = configureStore({reducer: rootReducer});
   return (
     <Provider store={store}>
       <Router>
       <div className="container">
         <Switch>
-          <Route exact path="/" component={Inicio}/>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/Login" component={Login}/>
           <Route exact path="/Inicio" component={Inicio}/>
           <Route exact path="/Comidas" component={Comidas}/>
           <Route exact path="/Informes" component={Informes}/>
