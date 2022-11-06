@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
-import { objectTraps } from 'immer/dist/internal';
+
 
 function Login() {
     //A FUTURO GUARDAR ESTO EN ALGO MAS GLOBAL COMO EL REDUCER NO EN EL STATE
@@ -34,7 +34,7 @@ function Login() {
         <div className="container">
             <div id="signInDiv"></div>
             {
-            Object.ownKeys(user).length != 0 &&
+            Object.ownKeys(user).length !== 0 &&
             <button onClick={(e) => handleSignOut(e)}></button>
             }
             { user &&
