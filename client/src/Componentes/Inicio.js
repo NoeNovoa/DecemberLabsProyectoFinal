@@ -6,6 +6,9 @@ import Comidas from '../Images/ComidasImg.png';
 import Informes from '../Images/InformesImg.png';
 import Graficas from '../Images/GraficasImg.png';
 import { NavLink } from 'react-router-dom';
+
+
+
 const Inicio = () => {
     return (
         <div className="container">
@@ -14,6 +17,7 @@ const Inicio = () => {
                     <img src={LogoInicio} className="imgLogo" alt="LogoDL" />
                 </div>   
                 <div class="col d-flex align-self-center justify-content-end">
+               
                     <img src={UserImg} className="UserImg" alt="User" />
                 </div>
             </div>
