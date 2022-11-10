@@ -5,53 +5,83 @@ import Timeline from '../Images/TimelineImg.png';
 import Comidas from '../Images/ComidasImg.png';
 import Informes from '../Images/InformesImg.png';
 import Graficas from '../Images/GraficasImg.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+
 const Inicio = () => {
+    const history = useHistory();
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    function cerrarSesion(){
+        localStorage.removeItem("user");
+        history.push("/Login")
+    }
+
     return (
         <div className="container">
-            <div class="row " >
-                <div class="col align-self-start">
+            <div className="row " >
+                <div className="col align-self-start">
                     <img src={LogoInicio} className="imgLogo" alt="LogoDL" />
                 </div>   
-                <div class="col d-flex align-self-center justify-content-end">
-                    <img src={UserImg} className="UserImg" alt="User" />
+                <div className="col d-flex align-self-center justify-content-end">
+                    <img src={UserImg} onClick={handleShow} className="UserImg" alt="User" />
                 </div>
             </div>
-            <div class="row " style={{"paddingTop":"20%"}}>
-                <div class="col d-flex justify-content-center">
+            <Modal show={show} className="my-modal" onHide={handleClose}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Cerrar Sesión</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <Button variant="outline-primary" onClick={cerrarSesion}>
+                        Cerrar sesión
+                    </Button>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="outline-primary" onClick={handleClose}>
+                        Cancelar
+                    </Button>
+                    </Modal.Footer>
+            </Modal>
+
+            <div className="row " style={{"paddingTop":"20%"}}>
+                <div className="col d-flex justify-content-center">
                     <NavLink  exact to="/Comidas"  id="dash" >
-                        <table className="linkContainer" >                    
+                        <div className="linkContainer" >                    
                             <img src={Comidas} className="iconosImg" alt="User" />
-                        </table>
+                        </div>
                     </NavLink>
                 </div>
-                <div class="col d-flex justify-content-center">
+                <div className="col d-flex justify-content-center">
                     <NavLink exact to="/Timeline"  id="dash" >
-                        <table className="linkContainer" >                    
+                        <div className="linkContainer" >                    
                             <img src={Timeline} className="iconosImg" alt="User" />
-                        </table>
+                        </div>
                     </NavLink>
                 </div>
-                <div class="col d-flex justify-content-center">
+                <div className="col d-flex justify-content-center">
                     <NavLink exact to="/Informes"  id="dash" >
-                        <table className="linkContainer" >                    
+                        <div className="linkContainer" >                    
                             <img src={Informes} className="iconosImg" alt="User" />
-                        </table>
+                        </div>
                     </NavLink>    
                 </div>
-                <div class="col d-flex justify-content-center">
+                <div className="col d-flex justify-content-center">
                     <NavLink exact to="/Graficas"  id="dash" >
-                        <table className="linkContainer" >                    
+                        <div className="linkContainer" >                    
                             <img src={Graficas} className="iconosImg" alt="User" />
-                        </table>
+                        </div>
                     </NavLink>    
                 </div>
             </div>
-            <div class="row textosMenuInicial">
-                    <h2 class="col d-flex justify-content-center">Comidas</h2>
-                    <h2 class="col d-flex justify-content-center">Iniciar servicio</h2> 
-                    <h2 class="col d-flex justify-content-center">Informes</h2>
-                    <h2 class="col d-flex justify-content-center">Graficas</h2>
+            <div className="row textosMenuInicial">
+                    <h2 className="col d-flex justify-content-center">Comidas</h2>
+                    <h2 className="col d-flex justify-content-center">Iniciar servicio</h2> 
+                    <h2 className="col d-flex justify-content-center">Informes</h2>
+                    <h2 className="col d-flex justify-content-center">Graficas</h2>
             </div>
         </div>
     )
