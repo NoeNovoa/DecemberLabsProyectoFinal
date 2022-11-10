@@ -3,6 +3,7 @@ import LogoInicio from '../Images/LogoInicio.jpg';
 import UserImg from '../Images/iconoPerfil.png';
 import { NavLink } from 'react-router-dom';
 
+
 const Menu = () => {
     return (
         <div class="row textosMenuInicial">
