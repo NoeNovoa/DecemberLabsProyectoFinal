@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+//const {conectar} = require('./Utilidades/config.js');
 
 // Comment Nico
 app.get("/api", (req, res) =>{
@@ -8,4 +9,5 @@ app.get("/api", (req, res) =>{
 
 app.listen(5000, () => {
     console.log("Server started at port 5000")
+    //conectar();
 } )

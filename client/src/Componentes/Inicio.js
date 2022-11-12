@@ -16,6 +16,7 @@ const Inicio = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const usuario = localStorage.getItem("user"); //Quise guardar usuario para ver nombre e imagen una vez logueado.
     
     function cerrarSesion(){
         localStorage.removeItem("user");
@@ -89,3 +90,22 @@ const Inicio = () => {
 }
 
 export default Inicio
+
+
+/*
+COMENTARIO NOE :
+INTENTO PARA VER IMAGEN Y USUARIO A AGREGAR ANTES DEL MODAL
+            <div class="col d-flex align-self-center justify-content-end" id="loginGoogle">
+                {
+                    usuario &&
+                    <div hidden class="col d-flex align-self-center" id="loginGoogle">
+                        <div>
+                            <img src={usuario.picture} alt="googleUserPic" class="col d-flex justify-content-center tituloInforme"></img>
+                        </div>
+                        <div>
+                            <h2 class="col d-flex justify-content-center tituloUsuarioLogueado" >{usuario.name}</h2>
+                        </div>
+                    </div>
+                }
+            </div>
+ */
