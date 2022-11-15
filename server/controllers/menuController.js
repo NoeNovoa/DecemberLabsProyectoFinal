@@ -1,9 +1,27 @@
-//Importamos el modelo.
-import MenuModel from '../models/menuModel.js'
+const MenuModel = require('../models/MenuModel.js');
 
 //Metodos para el CRUD.
 
 //Mostrar todos los registros
+
+
+exports.postAddMenu = (req, res, next) => {
+    const vegetariano = req.body.vegetariano;
+    const description = req.body.description;
+    MenuModel.create({
+     vegetariano: vegetariano,
+      description: description
+    })
+      .then(result => {
+        // console.log(result);
+        console.log('Created Menu');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+/* 
 export const getAllMenus =async (req,res)=>{
     try{
         const menus = await MenuModel.findAll()
@@ -69,4 +87,4 @@ export const deleteMenu = async (req,res)=>{
     }catch(error){
         res.json({message : error.message})
     }
-}
+}*/

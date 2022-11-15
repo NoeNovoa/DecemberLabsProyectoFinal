@@ -16,10 +16,19 @@ import ModalHeader from 'react-bootstrap/ModalHeader'
 import flechaDer from '../Images/flechaDer.png';
 import flechaIzq from '../Images/flechaIzq.png';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 
 const Comidas = () => {
+
+    const crearMenu = () => {
+        let descripcion = "prueba";
+        let esVegetariano = true;
+        
+        axios.post('http://localhost:5000/addMenu',
+        {descripcion: descripcion, esVegetariano: esVegetariano});
+    };
     
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -76,7 +85,7 @@ const Comidas = () => {
                     </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="outline-primary" onClick={handleClose}>
+                    <Button variant="outline-primary" onClick={crearMenu}>
                         Crear
                     </Button>
                     </Modal.Footer>
