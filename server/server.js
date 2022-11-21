@@ -24,7 +24,7 @@ Menu.belongsToMany(Ingrediente, { through: Ingrediente_Menu });
 Ingrediente.belongsToMany(Menu, { through: Ingrediente_Menu });
 
 sequelize
-  .sync({force : true})
+  .sync({force : false})
   .then(result => {
     console.log(result);
     //app.listen(3000);

@@ -1,4 +1,4 @@
-const Menu = require('../models/Menu.js');
+const Empleado = require('../models/Empleado.js');
 
 
 //Metodos para el CRUD.
@@ -7,15 +7,15 @@ const Menu = require('../models/Menu.js');
 
 
 
-exports.postAddMenu = (req, res, next) => {
+exports.postAddEmpleado = (req, res, next) => {
     const vegetariano = false;
     const Descripcion = "prueba";
-    Menu.create({
+    Empleado.create({
      vegetariano: vegetariano,
      Descripcion: Descripcion
     })
       .then(result => {
-        console.log('Created Menu');
+        console.log('Created Empleado');
       })
       .catch(err => {
         console.log(err);
@@ -23,11 +23,11 @@ exports.postAddMenu = (req, res, next) => {
   };
 
 
-  exports.getMenus = (req, res, next) => {
-    Menu.findAll()
-      .then(MenuModels => {
-        console.log(MenuModels)
-        console.log('Trajo todos los menus')
+  exports.getEmpleados = (req, res, next) => {
+    Empleado.findAll()
+      .then(Empleado => {
+        console.log(Empleado)
+        console.log('Trajo todos los Empleados')
         /* 
         res.render('shop/product-list', {
           prods: products,
@@ -40,19 +40,19 @@ exports.postAddMenu = (req, res, next) => {
       });
   };
 
-  exports.getEditMenu = (req, res, next) => {
+  exports.getEditEmpleado = (req, res, next) => {
     //const editMode = req.query.edit;
     //if (!editMode) {
       //return res.redirect('/');
     //}
-    const menuId = 1;
-    Menu.findByPk(menuId)
-      .then(Menu => {
-        if (!Menu) {
+    const EmpleadoId = 1;
+    Empleado.findByPk(EmpleadoId)
+      .then(Empleado => {
+        if (!Empleado) {
           console.log('no lo encontro')
           //return res.redirect('/');
         }
-        console.log(Menu)
+        console.log(Empleado)
         /* 
         res.render('admin/edit-product', {
           pageTitle: 'Edit Product',
@@ -64,15 +64,15 @@ exports.postAddMenu = (req, res, next) => {
       .catch(err => console.log(err));
   };
 
-  exports.postEditMenu = (req, res, next) => {
-    const menuId = 1;
+  exports.postEditEmpleado = (req, res, next) => {
+    const EmpleadoId = 1;
     const vegetariano = true;
     const Descripcion = "prueba edit";
-    Menu.findByPk(menuId)
-      .then(Menu => {
-        Menu.vegetariano = vegetariano;
-        Menu.Descripcion = Descripcion;
-        return Menu.save();
+    Empleado.findByPk(EmpleadoId)
+      .then(Empleado => {
+        Empleado.vegetariano = vegetariano;
+        Empleado.Descripcion = Descripcion;
+        return Empleado.save();
       })
       .then(result => {
         console.log('UPDATED PRODUCT!');
@@ -81,14 +81,14 @@ exports.postAddMenu = (req, res, next) => {
       .catch(err => console.log(err));
   };
 
-  exports.postDeleteMenu = (req, res, next) => {
-    const menudId = 1;
-    Menu.findByPk(menudId)
-      .then(Menu => {
-        return Menu.destroy();
+  exports.postDeleteEmpleado = (req, res, next) => {
+    const EmpleadodId = 1;
+    Empleado.findByPk(EmpleadodId)
+      .then(Empleado => {
+        return Empleado.destroy();
       })
       .then(result => {
-        console.log('DESTROYED MENU');
+        console.log('DESTROYED Empleado');
         //res.redirect('/admin/products');
       })
       .catch(err => console.log(err));
@@ -99,7 +99,7 @@ exports.postAddMenu = (req, res, next) => {
 
   Ejemplo para eliminar related items
 
-  exports.postPedidoDeleteMenu = (req, res, next) => {
+  exports.postPedidoDeleteEmpleado = (req, res, next) => {
     const prodId = req.body.productId;
     req.user
       .getCart()
@@ -118,7 +118,7 @@ exports.postAddMenu = (req, res, next) => {
 
   /* 
   
-  Ejemplo para agegar Ingredientes_Menu y Pedidos
+  Ejemplo para agegar Ingredientes_Empleado y Pedidos
 
   exports.postCart = (req, res, next) => {
     const prodId = req.body.productId;
@@ -154,10 +154,10 @@ exports.postAddMenu = (req, res, next) => {
       .catch(err => console.log(err));
   };*/
  
-  //postAddMenu();
-  //postDeleteMenu();
-  //postEditMenu();
-  //getEditMenu();
-  //getMenus();
+  //postAddEmpleado();
+  //postDeleteEmpleado();
+  //postEditEmpleado();
+  //getEditEmpleado();
+  //getEmpleados();
 
-  //module.exports = postAddMenu;
+  //module.exports = postAddEmpleado;
