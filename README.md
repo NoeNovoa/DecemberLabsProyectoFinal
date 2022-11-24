@@ -1,2 +1,0 @@
-"# DecemberLabsCocina" 
-"# DecemberLabsProyectoFinal" 

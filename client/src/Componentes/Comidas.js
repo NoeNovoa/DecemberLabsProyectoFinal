@@ -17,17 +17,20 @@ import flechaDer from '../Images/flechaDer.png';
 import flechaIzq from '../Images/flechaIzq.png';
 import { useState } from 'react';
 import axios from 'axios';
-
+import { useRef } from 'react';
 
 const Comidas = () => {
 
 
-    const crearMenu = () => {
-        let descripcion = "prueba";
-        let esVegetariano = true;
+    const descripcionMenu = useRef(null)
+    const vegetarianoMenu = useRef(null)
+
+    const crearMenu = async e => {
         
-        axios.post('http://localhost:5000/addMenu',
-        {descripcion: descripcion, esVegetariano: esVegetariano});
+        const desc = descripcionMenu.current.value
+        const veg = vegetarianoMenu.current.value
+        
+
     };
     
     const [show, setShow] = useState(false);
@@ -70,6 +73,7 @@ const Comidas = () => {
                             type="text"
                             placeholder="Nuevo menu"
                             autoFocus
+                            ref={descripcionMenu}
                         />
                         </Form.Group>
                         <Form.Group
@@ -80,12 +84,13 @@ const Comidas = () => {
                             type="switch"
                             id="custom-switch"
                             label="Vegetariano"
+                            ref={vegetarianoMenu}
                         />
                         </Form.Group>
                     </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="outline-primary" onClick={crearMenu}>
+                    <Button variant="outline-primary" onHandleClick={crearMenu}>
                         Crear
                     </Button>
                     </Modal.Footer>
