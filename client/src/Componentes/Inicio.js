@@ -5,6 +5,7 @@ import Timeline from '../Images/TimelineImg.png';
 import Comidas from '../Images/ComidasImg.png';
 import Informes from '../Images/InformesImg.png';
 import Graficas from '../Images/GraficasImg.png';
+import MenuSemanales from '../Images/pedidoImg.png';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -58,6 +59,13 @@ const Inicio = () => {
                     </NavLink>
                 </div>
                 <div className="col d-flex justify-content-center">
+                    <NavLink  exact to="/MenuSemanales"  id="dash" >
+                        <div className="linkContainer" >                    
+                            <img src={MenuSemanales} className="iconosImg" alt="User"/>
+                        </div>
+                    </NavLink>
+                </div>
+                <div className="col d-flex justify-content-center">
                     <NavLink exact to="/Timeline"  id="dash" >
                         <div className="linkContainer" >                    
                             <img src={Timeline} className="iconosImg" alt="User" />
@@ -81,6 +89,7 @@ const Inicio = () => {
             </div>
             <div className="row textosMenuInicial">
                     <h2 className="col d-flex justify-content-center">Comidas</h2>
+                    <h2 className="col d-flex justify-content-center">Menu Semanales</h2>
                     <h2 className="col d-flex justify-content-center">Iniciar servicio</h2> 
                     <h2 className="col d-flex justify-content-center">Informes</h2>
                     <h2 className="col d-flex justify-content-center">Graficas</h2>

@@ -2,6 +2,7 @@ import './Css/App.css';
 import Login from './Componentes/Login';
 import Inicio from './Componentes/Inicio';
 import Comidas from './Componentes/Comidas';
+import MenuSemanales from './Componentes/MenuSemanales';
 import Timeline from './Componentes/Timeline';
 import Informes from './Componentes/Informes';
 import Graficas from './Componentes/Graficas';
@@ -62,6 +63,7 @@ return (
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Inicio" component={Inicio}/>
           <Route exact path="/Comidas" component={Comidas}/>
+          <Route exact path="/MenuSemanales" component={MenuSemanales}/>
           <Route exact path="/Informes" component={Informes}/>
           <Route exact path="/Graficas" component={Graficas}/>
           <Route exact path="/Timeline" component={Timeline}/>
